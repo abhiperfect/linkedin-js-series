@@ -153,10 +153,21 @@ Means - variables are accessible within entire function in which they are declar
 
 When the JS engine scans code, it creates an environment called the Execution Context.
 
+`JavaScript is a Synchronous single-threaded languages`
+
+JS is a `single threaded` which means only one statement is executed at a time.
+
+
+`Synchronous` (or `sync`) execution usually refers to code executing in sequence. In `sync programming`, the program is executed line by line, one line at a time. 
+Each time a function is called, the program execution waits until that function returns before continuing to the next line of code.
+
+
 ## Types of Execution Context
 
 1. **Global EC**: Created when JS code first starts to run and represents the global scope in JS.
 2. **Function EC**: Created when a function in the code starts executing.
+  
+  <img src="Screenshot 2024-07-02 041651.png" width="400px" alt="exectution context img-1">
 
 ## Execution Phases
 
@@ -164,13 +175,48 @@ When the JS engine scans code, it creates an environment called the Execution Co
 - Allocates location to variables and functions.
 - Stores variables with value as `undefined` and function references (i.e., the complete function definition).
 
+  <img src="Screenshot 2024-07-02 042802.png" width="400px" alt="exectution context Phase-1">
+
 ### 2. Execution Phase
 - Starts through the entire code line by line.
 - Assigns values to variables in memory.
+- When their is function declaration nothing happend( function declaration already copied into function variable in Memory creation phase e.g.: `square:{...}` into Memory EC).
+- When their is a function call e.g.`square(n)` into code. Then javascript invoke it and `brand new Execution Context created for particular function call` only and has own Memory creation phase and as well as Code Execution Phase.
+
+ 
+  <img src="image-1.png" width="400px" alt="exectution context Phase-2">
+
+  - Here `num` is Parameter of function.
+  - `n` is a argument of function call.
+
 - For functions, when invoked, JS creates a new function EC.
 - When a function returns a value, the function EC is destroyed.
 
-*Once the entire code execution is done, the Global EC will be destroyed as well.*
+  <img src="image-2.png" width="300px" alt="exectution context Phase-2">
+
+
+  <img src="image-3.png" width="300px" alt="exectution context Phase-2">
+
+  When `square(n)` invoke its Execution context push into stack.
+
+  <img src="image-4.png" width="200px" alt="exectution context Phase-2">
+  
+  <img src="Screenshot 2024-07-02 050515.png" width="200px" alt="exectution context Phase-2">
+  
+  - After the finishing the function call its Execution context `E1` poped out from call stack. and control goes back to Global Execution Context.
+  
+  <img src="Screenshot 2024-07-02 051122.png" width="200px" alt="exectution context Phase-2">
+
+  <img src="Screenshot 2024-07-02 051257.png" width="200px" alt="exectution context Phase-2">
+ 
+ - Next function call inovke and `E2` Execution context pushed after it 
+
+    <img src="Screenshot 2024-07-02 051737.png" width="200px" alt="exectution context Phase-2">
+
+
+
+*Once the entire code execution is done, the Global EC will be destroyed as well and also call stack become empty*
+
 
 ## Call Stack (Last In First Out)
 
