@@ -328,7 +328,18 @@ const myFunc = function () {
 
 ### How functions works in JS
    
-  ![alt text](<Screenshot 2024-07-02 060740.png>)
+- Due to hoisting function call itself without any error
+
+![alt text](<Screenshot 2024-07-02 060740.png>)
+
+- When `a()` call new indepedent Execution context crated and when it required ceration variable (`x`) it first search into local memory.
+
+![alt text](<Screenshot 2024-07-02 072758.png>)
+ 
+- Call to `b()` 
+
+![alt text](<Screenshot 2024-07-02 073412.png>)
+
 
 ### Function Expression (Benefits and Drawbacks)
 - Cannot be accessed before initialization.
