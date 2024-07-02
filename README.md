@@ -241,11 +241,18 @@ Hoisting is a behavior in JavaScript where all declarations of a function, varia
 This whole process is done during the Memory Creation Phase. 
 Let's see what actually happens with:
 
-![alt text](image-5.png)
+--- 
 
-![alt text](image-6.png)
+- Function and variable declaration before calling and using respectively
+  
+  ![alt text](image-5.png)
 
-![alt text](image-7.png)
+- Function and variable declaration after calling and using respectively
+ 
+  ![alt text](image-6.png)
+
+- What if a variable not declared anywhere and try to print its value
+  ![alt text](image-7.png)
 
 
 Because of Hoisting and Execution context created:
@@ -260,13 +267,14 @@ Because of Hoisting and Execution context created:
 
 - Now what if function is defined as Arrow function? How javascript behave?
 
-![alt text](<Screenshot 2024-07-02 054504.png>)
+  ![alt text](<Screenshot 2024-07-02 054504.png>)
 
   - When function is defined as arrow function its simply behave like a variable.
   
   - So' as like other variable `getName` variable also possessed the value of special keyword `undefined`.
-
-![alt text](image-9.png)
+  
+  <img src="image-9.png" width="300px" alt="Hoisting img">
+  
 
 ### Variables
 - **`var`**: Variables are hoisted but with a default value of `undefined`.
@@ -317,6 +325,10 @@ const myFunc = function () {
 * Here you can use `var` or `let` as well.
   - If `var` is used, it will store `undefined` in the memory creation phase.
   - If `let` and `const` are used, it will throw an error: we cannot access them before initialization.
+
+### How functions works in JS
+   
+  ![alt text](<Screenshot 2024-07-02 060740.png>)
 
 ### Function Expression (Benefits and Drawbacks)
 - Cannot be accessed before initialization.
