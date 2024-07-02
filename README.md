@@ -173,7 +173,7 @@ Each time a function is called, the program execution waits until that function 
 
 ### 1. Memory Creation Phase
 - Allocates location to variables and functions.
-- Stores variables with value as `undefined` and function references (i.e., the complete function definition).
+- Stores variables with special keyword `undefined` and function references (i.e., the complete function definition).
 
   <img src="Screenshot 2024-07-02 042802.png" width="400px" alt="exectution context Phase-1">
 
@@ -240,6 +240,33 @@ Hoisting is a behavior in JavaScript where all declarations of a function, varia
 
 This whole process is done during the Memory Creation Phase. 
 Let's see what actually happens with:
+
+![alt text](image-5.png)
+
+![alt text](image-6.png)
+
+![alt text](image-7.png)
+
+
+Because of Hoisting and Execution context created:
+
+- Printing function itself after function declaration: <br/>
+
+  ![alt text](<Screenshot 2024-07-02 053158.png>)
+
+- Printing function itself before function declaration as well <br/>
+
+  ![alt text](image-8.png)
+
+- Now what if function is defined as Arrow function? How javascript behave?
+
+![alt text](<Screenshot 2024-07-02 054504.png>)
+
+  - When function is defined as arrow function its simply behave like a variable.
+  
+  - So' as like other variable `getName` variable also possessed the value of special keyword `undefined`.
+
+![alt text](image-9.png)
 
 ### Variables
 - **`var`**: Variables are hoisted but with a default value of `undefined`.
